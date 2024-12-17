@@ -92,6 +92,19 @@ Temperatures are set to 0 for deterministic outputs.
 
 - `Java` is requried for using BM25.
 
+## Docker Build and Run
+
+```bash
+docker build -t medical-medrag  -f Dockerfile .
+```
+
+```bash
+docker run -it --gpus all --rm -p 8000:8000 --ipc=host -v ${PWD}:/app -v ./output:/output medical-medrag bash
+```
+
+
+
+
 ## Usage
 
 Example medical qusetion from [MMLU](https://github.com/hendrycks/test)
